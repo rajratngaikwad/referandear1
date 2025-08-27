@@ -349,4 +349,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 // Handle other HTTP methods
 http_response_code(405);
 echo json_encode(['status' => 'error', 'message' => 'Method not allowed']);
+
 ?>

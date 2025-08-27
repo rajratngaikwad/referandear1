@@ -1,7 +1,7 @@
 FROM php:8.1-apache
-
-# Copy all project files to Apache root
+RUN a2enmod rewrite
 COPY . /var/www/html/
-
-# Expose port 80 for web traffic
+WORKDIR /var/www/html/
+RUN chown -R www-data:www-data /var/www/html
 EXPOSE 80
+CMD ["apache2-foreground"]
